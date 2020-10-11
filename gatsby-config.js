@@ -46,7 +46,8 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: { 
         tailwind: true,
-        ignore: ['src/components/markdown-styles.css'] 
+        content: [`${__dirname}/src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}`],
+        ignore: ['src/components/markdown-styles.css', 'katex/dist/katex.min.css', 'prismjs/themes/prism-okaidia.css', 'prismjs/plugins/line-numbers/prism-line-numbers.css'] 
       },
     },
     {
