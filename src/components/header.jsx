@@ -3,17 +3,19 @@ import { Link } from "gatsby"
 
 export default ({ onBlog }) => {
   return (
-    <div className="flex w-full justify-between items-start">
-      <div className="flex flex-col justify-center text-2xl w-full pb-4">
+    <div className="flex flex-col md:flex-row w-full justify-between items-start">
+      <div className="flex flex-col justify-center text-2xl w-full pb-2 md:pb-4">
         <div className="flex items-center space-x-2">
-          <span className="font-semibold">Micah Cantor</span>
+          <Link className="font-semibold" to="/">Micah Cantor</Link>
           <SocialIcons />
         </div>
         <span className="text-xl">CS Student at Grinnell College</span>
       </div>
-      <div className={`flex items-center text-xl space-x-4 justify-start`}>
+      <div className={`flex items-center text-xl space-x-4 justify-start pb-2 md:pb-0`}>
         <Link className={onBlog ? "border-b-2 border-textColor" : ""} to="/">Blog</Link>
-        <SwapIcon />
+        <Link to={onBlog? "/projects" : "/"}>
+          <SwapIcon />
+        </Link>
         <Link className={onBlog ? "" : "border-b-2 border-textColor"} to="/projects">Projects</Link>
       </div>
     </div>

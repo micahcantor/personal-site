@@ -9,7 +9,7 @@ const ProjectsPage = ({ data }) => {
     <>
       <SEO title="Projects" />
       <div className="bg-bgDark text-textColor flex flex-col w-full h-full">
-        <div className="flex flex-col container items-center mx-auto md:w-3/4 lg:w-1/2 px-4 pt-4 pb-8">
+        <div className="flex flex-col container items-center mx-auto lg:w-3/4 xl:w-1/2 px-4 pt-4 pb-8">
           <Header onBlog={false}/>
           <div className="flex flex-col w-full h-full space-y-3">
             <span className="text-4xl font-semibold">Projects</span>

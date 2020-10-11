@@ -33,7 +33,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon.svg`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -63,7 +63,7 @@ module.exports = {
               // stripping.
               // A suggested value for English speakers is the non-ascii
               // character '›'.
-              inlineCodeMarker: null,
+              inlineCodeMarker: "›",
               // This lets you set up language aliases.  For example,
               // setting this to '{ sh: "bash" }' will let you use
               // the language "sh" which will highlight using the
@@ -106,6 +106,13 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`
+            }
+          }
         ],
       },
     },

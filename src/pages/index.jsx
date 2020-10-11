@@ -1,19 +1,26 @@
 import React from "react"
-import {Link} from "gatsby"
+import { Link, graphql } from "gatsby"
 import SEO from "../components/seo.js"
 import Header from "../components/header.jsx"
 
-const BlogPage = () => {
+const BlogPage = ({ data }) => {
+  const { allMarkdownRemark: { edges } } = data;
+  const blogPosts = edges.map(({ node }) => {
+    const { frontmatter } = node;
+    const {title, date, description, slug} = frontmatter;
+    return <BlogItem title={title} date={date} description={description} slug={slug} key={node.id}/>
+  }); 
+
   return (
     <>
       <SEO title="Blog" />
       <div className="bg-bgDark text-textColor flex flex-col w-full h-screen">
-        <div className="flex flex-col container items-center mx-auto md:w-3/4 lg:w-1/2 px-4 pt-4 pb-8">
+        <div className="flex flex-col container items-center mx-auto lg:w-3/4 xl:w-1/2 px-4 pt-4 pb-8">
           <Header onBlog={true}/>
           <div className="flex flex-col w-full h-full space-y-3">
             <span className="text-4xl font-semibold">Blog</span>
             <div className="overflow-y-auto">
-              <BlogItem title="Parsing propositional logic in 30 lines of Racket" date="Oct 6, 2020" description="hello there" slug="racket-parser"></BlogItem>
+              {blogPosts}
             </div>
           </div>
         </div>
@@ -24,12 +31,30 @@ const BlogPage = () => {
 
 const BlogItem = ({title, date, description, slug}) => {
   return (
-    <Link className="bg-white rounded-md p-4 flex flex-col" to={`/blog/${slug}`}>
+    <Link className="bg-white rounded-md p-4 flex flex-col" to={slug}>
       <span className="text-2xl">{title}</span>
       <span className="">{date}</span>
       <span className="text-xl font-light">{description}</span>
     </Link>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
 
 export default BlogPage
