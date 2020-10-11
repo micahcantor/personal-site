@@ -133,7 +133,7 @@ export const imagesQuery = graphql`{
       }
     }
   },
-  personal: file(relativePath: {eq: "PersonalSite.png"}) {
+  personal: file(relativePath: {eq: "personal-site.png"}) {
     childImageSharp {
       fluid(maxWidth: 500, quality: 100) {
         ...GatsbyImageSharpFluid
