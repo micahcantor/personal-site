@@ -5,7 +5,7 @@ export default ({ onBlog }) => {
   return (
     <div className="flex flex-col md:flex-row w-full justify-between items-start">
       <div className="flex flex-col justify-center items-center md:items-start text-xl md:text-2xl w-full md:pb-4">
-        <div className="flex items-center md:items-start space-x-2">
+        <div className="flex items-center space-x-2">
           <Link className="font-semibold" to="/">Micah Cantor</Link>
           <SocialIcons />
         </div>
