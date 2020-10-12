@@ -116,6 +116,17 @@ module.exports = {
           }
         ],
       },
+      
+    },
+    {
+      resolve: `gatsby-plugin-umami`,
+      options: {
+        websiteId: '60893590-01e1-44d0-98d0-797e8e53a59e',
+        srcUrl: 'https://umami-pearl.vercel.app/umami.js',
+        includeInDevelopment: false,
+        autoTrack: true,
+        respectDoNotTrack: true
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
