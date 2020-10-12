@@ -11,10 +11,10 @@ export default function Template({ data }) {
   return (
     <>
       <SEO title={frontmatter.title} />
-      <div className="bg-bgDark text-textColor flex flex-col w-full h-screen overflow-y-auto">
+      <div className="bg-bgDark text-textColor flex flex-col w-full overflow-y-auto">
         <div className="flex flex-col container mx-auto lg:w-3/4 xl:w-1/2 px-4 pt-4 pb-8">
           <Header onBlog={true}/>
-          <main className="w-full overflow-hidden pb-4">
+          <main className="w-full overflow-y-auto pb-4">
             <div
               className="markdown"
               dangerouslySetInnerHTML={{ __html: html }}

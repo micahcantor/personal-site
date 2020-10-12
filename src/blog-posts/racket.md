@@ -121,7 +121,7 @@ Now we can now define our tokenize function, which will take in an input string,
 (define (tokenize ip)
     (define lexer
       	(lexer-src-pos
-            ;; define tokens rules here!
+            ;; define token rules here!
        		[(eof) (void)]))
     (define (next-token) (lexer ip))
     next-token)
