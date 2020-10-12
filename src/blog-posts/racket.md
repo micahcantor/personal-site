@@ -1,6 +1,6 @@
 ---
 slug: "/blog/logic-racket-parser"
-date: "2020-08-31"
+date: "2020-10-11"
 title: "Parsing propositional logic in 33 lines of Racket"
 description: "A guide to implementing a simple parser for propositional logic in Racket"
 ---
