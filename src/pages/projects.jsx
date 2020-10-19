@@ -29,7 +29,7 @@ const ProjectsList = ({ data }) => {
       <ProjectItem title={project.title} image={project.image} description={project.description} tech={project.tech} links={project.links}></ProjectItem>
     </li>
   )
-  return <ul className="space-y-3">{items}</ul>
+  return <ul className="space-y-5">{items}</ul>
 }
 
 const ProjectItem = ({image, title, description, tech, links}) => {
@@ -44,7 +44,7 @@ const ProjectItem = ({image, title, description, tech, links}) => {
     </li>
   )
   return (
-    <div className="max-w-sm w-full md:max-w-full md:flex">
+    <div className="max-w-sm shadow-md border-textColor border-t-8 rounded-md w-full md:max-w-full md:flex">
       <Img fluid={image}
         className="bg-white h-48 md:h-auto md:w-48 flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden" >
       </Img>
