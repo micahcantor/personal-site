@@ -105,7 +105,7 @@ const ProjectsData = (data) => {
       tech: ["React", "Gatsby", "Tailwind"],
       links: [
         { type: "website", href: "/"},
-        { type: "github", href: "https://github.com/micahcantor/PersonalHomepage"}
+        { type: "github", href: "https://github.com/micahcantor/personal-site"}
       ]
     }
   ]}
