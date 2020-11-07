@@ -10,6 +10,10 @@ module.exports = {
         bgDark: '#f9f9f9',
         textColor: '#272822'
       },
+      fontFamily: {
+        'bevan': ['Bevan'],
+        'press-start': ['PressStart']
+      }
     },
   },
   variants: {},
