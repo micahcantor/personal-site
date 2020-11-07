@@ -1,6 +1,9 @@
 
 module.exports = {
   purge: [],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
   theme: {
     extend: {
       colors: {

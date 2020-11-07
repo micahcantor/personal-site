@@ -6,8 +6,13 @@ import { Game, GameConfig, Color } from "24a2"
 const GOL = () => {
   const [playing, setPlaying] = useState(false)
   function begin() {
-    setPlaying(true)
-    game.run()
+    setPlaying(true);
+    game.run();
+  }
+
+  function restart() {
+    dots = [];
+    create(game);
   }
 
   return (
@@ -26,6 +31,15 @@ const GOL = () => {
           </button>
         )}
         <div id="game"></div>
+        {playing ? (
+          <button
+            onClick={restart}
+            className="inline-block text-center text-xl md:text-3xl"
+          >
+            {" "}
+            restart
+          </button>
+        ) : null}
       </div>
     </Layout>
   )
