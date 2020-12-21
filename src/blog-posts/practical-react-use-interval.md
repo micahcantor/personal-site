@@ -76,7 +76,7 @@ The first function intended to carefully manage the state of the timers when the
 
 Alongside this, the second function would reset the progress bar when a song had been skipped, and the third function would clear all timers when React dismounted the component. Adding to the overhead is the need for local state variables for tracking the id of the setInterval function, and for tracking whether the timer was active.
 
-Yikes. I won't pretend this was good design. It's confusing, difficult to read, and very fragile for such an important component in a music player. There may have been ways to improve the design while retaining `setInterval`, but after coming across `useInterval`, I decided to rewrite it using the custom hook in order to simplify the component.
+Yikes. I won't pretend this was good design. It's confusing, difficult to read, and very fragile for such an important component in a music player. There may have been ways to improve the design while retaining setInterval, but after coming across useInterval, I decided to rewrite it using the custom hook in order to simplify the component.
 
 ## Switching to useInterval
 
@@ -114,10 +114,10 @@ export const ProgressBar = ({ elapsed, songs, runtime, isPaused, deviceID, room,
   );
 ```
 
-You should be able to see at a glance that this has a much cleaner design. Instead of the confusing and long first `useEffect` in the original design, most of that behavior is now handled by a conditional usage of `useInterval`. The most important line here is the second parameter to useInterval: `shouldIncrement ? 50 : null`. This simple ternary sets the callback function to trigger every 50 ms if `shouldIncrement` is true. In that callback function, all we have to do is increment the state of the progress bar.
+You should be able to see at a glance that this has a much cleaner design. Instead of the confusing and long first useEffect in the original design, most of that behavior is now handled by a conditional usage of useInterval. The most important line here is the second parameter to useInterval: `js› shouldIncrement ? 50 : null`. This simple ternary sets the callback function to trigger every 50 ms if `shouldIncrement` is true. In that callback function, all we have to do is increment the state of the progress bar.
 
-How do we know what `shouldIncrement` should be? that's what the other two `useEffect` calls are for. The first updates `shouldIncrement` if a song is playing and there is a song in queue. The second one simply turns off the interval when the song reaches the end.
+How do we know what `shouldIncrement` should be? that's what the other two useEffect calls are for. The first updates shouldIncrement if a song is playing and there is a song in queue. The second one simply turns off the interval when the song reaches the end.
 
-This new design is simpler, easier to read, and less buggy since manually managing the timer has been abstracted away with useInterval. Now, it's certainly not perfect, since it still relies on `useEffect` to update state when other state changes. That is absolutely **not** a best practice, but fixing that problem involved a better global state management design that I did not understand how to implement at the time I wrote this component. I'm also still a student of React, so forgive me for any other design errors.
+This new design is simpler, easier to read, and less buggy since manually managing the timer has been abstracted away with useInterval. Now, it's certainly not perfect, since it still relies on useEffect to update state when other state changes. That is absolutely **not** a best practice, but fixing that problem involved a better global state management design that I did not understand how to implement at the time I wrote this component. I'm also still a student of React, so forgive me for any other design errors.
 
 Still, switching to useInterval resulted in a marked improvement, and if your React code requires carefully managing timers, I would recommend considering a switch to it.
