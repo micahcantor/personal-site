@@ -10,8 +10,8 @@ const BlogPage = ({ data }) => {
   } = data
   const blogPosts = edges.map(({ node }) => {
     const { frontmatter } = node
-    const { title, date, description, slug } = frontmatter
-    return (
+    const { title, date, draft, description, slug } = frontmatter
+    if (!draft) return (
       <BlogItem
         title={title}
         date={date}
@@ -20,6 +20,7 @@ const BlogPage = ({ data }) => {
         key={node.id}
       />
     )
+    else return null
   })
 
   return (
@@ -58,6 +59,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug
+            draft
             title
             description
           }
