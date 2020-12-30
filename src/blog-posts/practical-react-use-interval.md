@@ -2,11 +2,11 @@
 slug: "/blog/practical-react-use-interval"
 date: "2020-12-20"
 draft: false
-title: "Practical React: Powerful simplicity with useInterval"
+title: "Practical React: The Power of useInterval"
 description: "A case study in switching from manually managing setInterval to the useInterval custom hook."
 ---
 
-# Practical React: declarative simplicity with useInterval
+# Practical React: The Power of useInterval
 
 In Dan Abramov's blog post ["Making setInterval Declarative with React Hooks"](https://overreacted.io/making-setinterval-declarative-with-react-hooks/), he writes about a custom React hook to wrap the native Javascript function, setInterval. The first time I read the article, I thought it was interesting, but I was not convinced by the power of custom hooks until I got the chance to use it in action. That opportunity came when I was designing a music progress bar component. The switch from using `setInterval` to `useInterval` resulted in a dramatic reduction in code size and a cleaner design.
 
