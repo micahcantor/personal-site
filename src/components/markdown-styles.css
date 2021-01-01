@@ -76,7 +76,8 @@
 }
 
 .markdown pre[class*="language-"] {
-  @apply p-0;
+  font-size: inherit;
+  padding: 1em;
 }
 
 .markdown pre code {
@@ -120,6 +121,10 @@
   padding-left: 1em;
   padding-right: 1em;
   overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  font-size: .5em;
 }
 
 .gatsby-highlight pre[class*="language-"].line-numbers {
