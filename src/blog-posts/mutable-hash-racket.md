@@ -3,7 +3,7 @@ slug: "/blog/simple-hash-racket"
 date: "2021-1-1"
 draft: false
 title: "Implementing Simple Hash Tables in Racket"
-description: "A simple implementation"
+description: "A simple implementation of mutable hash tables to learn how they work behind the scenes."
 ---
 
 # Implementing Simple Hash Tables in Racket
