@@ -114,6 +114,7 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          'gatsby-remark-numbered-footnotes',
           {
             resolve: `gatsby-remark-katex`,
             options: {
