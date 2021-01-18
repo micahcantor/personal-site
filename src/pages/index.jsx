@@ -30,7 +30,7 @@ const BlogPage = ({ data }) => {
         <Header onBlog={true} />
         <div className="flex flex-col w-full h-full space-y-3">
           <span className="text-4xl font-bevan font-semibold">Blog</span>
-          <div className="space-y-5 pb-4m">{blogPosts}</div>
+          <div className="space-y-5 pb-6">{blogPosts}</div>
         </div>
       </Layout>
     </div>

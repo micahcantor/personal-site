@@ -1,6 +1,6 @@
 ---
 slug: "/blog/racket-programming-the-fun-way-review"
-date: "2021-01-14"
+date: "2021-01-18"
 draft: false
 title: "Book Review: Racket Programming the Fun Way by James Stelly"
 description: "A review of the new Racket programming book."
